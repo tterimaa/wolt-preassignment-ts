@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import Restaurants from './restaurantList'
 
-const App = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const apiUrl = 'http://localhost:3001/restaurants'
+
+interface Restaurant {
+  name: string
+  blurhash: string
 }
 
-export default App;
+const App: React.FC = () => {
+  const [restaurants, setRestaurants] = useState<Array<Restaurant>>([])
+
+  useEffect(() => {
+    async function fetchRestaurants(): Promise<void> {
+      const response = await fetch(apiUrl)
+      const restaurants = await response.json()
+      setRestaurants(restaurants)
+    }
+    fetchRestaurants()
+  }, [])
+  return (
+    <div className="App">
+      <Restaurants restaurants={restaurants} />
+    </div>
+  )
+}
+
+export default App
