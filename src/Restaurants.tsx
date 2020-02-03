@@ -12,7 +12,13 @@ const restaurantList: React.FC<RestaurantsProps> = ({ restaurants }) => {
       <ul>
         {restaurants.map(restaurant => (
           <li key={nextId()}>
-            <RestaurantItem name={restaurant.name}></RestaurantItem>
+            <RestaurantItem
+              name={restaurant.name}
+              city={restaurant.city}
+              image={restaurant.image}
+              delivery_price={restaurant.delivery_price}
+              description={restaurant.description}
+            />
           </li>
         ))}
       </ul>

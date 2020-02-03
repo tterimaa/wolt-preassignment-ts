@@ -1,4 +1,7 @@
 type Restaurant = {
   name: string
-  blurhash?: string
+  image: string
+  city: string
+  delivery_price: number
+  description?: string
 }

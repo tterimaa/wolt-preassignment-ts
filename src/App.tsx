@@ -10,7 +10,6 @@ const App: React.FC = () => {
     async function fetchRestaurants(): Promise<void> {
       const response = await fetch(apiUrl)
       const restaurants = await response.json()
-      console.log(restaurants)
       setRestaurants(restaurants)
     }
     fetchRestaurants()
