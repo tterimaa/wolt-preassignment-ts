@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Restaurants from './restaurantList'
+import Restaurants from './Restaurants'
 
 const apiUrl = 'http://localhost:3001/restaurants'
-
-interface Restaurant {
-  name: string
-  blurhash: string
-}
 
 const App: React.FC = () => {
   const [restaurants, setRestaurants] = useState<Array<Restaurant>>([])
@@ -15,6 +10,7 @@ const App: React.FC = () => {
     async function fetchRestaurants(): Promise<void> {
       const response = await fetch(apiUrl)
       const restaurants = await response.json()
+      console.log(restaurants)
       setRestaurants(restaurants)
     }
     fetchRestaurants()

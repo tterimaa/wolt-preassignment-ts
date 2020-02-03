@@ -1,22 +1,18 @@
 import React from 'react'
-import Restaurant from './Restaurant'
+import RestaurantItem from './RestaurantItem'
 import nextId from 'react-id-generator'
 
-interface Props {
-  restaurants: Array<RestaurantIf>
+interface RestaurantsProps {
+  restaurants: Array<Restaurant>
 }
 
-interface RestaurantIf {
-  name: string
-}
-
-const restaurantList: React.FC<Props> = ({ restaurants }) => {
+const restaurantList: React.FC<RestaurantsProps> = ({ restaurants }) => {
   return (
     <div>
       <ul>
         {restaurants.map(restaurant => (
           <li key={nextId()}>
-            <Restaurant name={restaurant.name}></Restaurant>
+            <RestaurantItem name={restaurant.name}></RestaurantItem>
           </li>
         ))}
       </ul>
