@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import RestaurantItem from './RestaurantItem'
 import nextId from 'react-id-generator'
+import { Restaurant } from './types'
 
-interface RestaurantsProps {
-  restaurants: Array<Restaurant>
-}
+const apiUrl = 'http://localhost:3001/restaurants'
 
-const restaurantList: React.FC<RestaurantsProps> = ({ restaurants }) => {
+const Restaurants: React.FC = () => {
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([])
+
+  useEffect(() => {
+    async function startSetRestaurants(): Promise<void> {
+      const response = await fetch(apiUrl)
+      const restaurants = await response.json()
+      setRestaurants(restaurants)
+    }
+    startSetRestaurants()
+  }, [])
   return (
     <div>
       <ul>
@@ -26,4 +35,4 @@ const restaurantList: React.FC<RestaurantsProps> = ({ restaurants }) => {
   )
 }
 
-export default restaurantList
+export default Restaurants

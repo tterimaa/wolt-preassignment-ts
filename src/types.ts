@@ -1,4 +1,4 @@
-type Restaurant = {
+export interface Restaurant {
   name: string
   image: string
   city: string

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Restaurant } from './types'
 
 const RestaurantItem: React.FC<Restaurant> = ({ name, image, city, delivery_price, description }) => {
   return (
