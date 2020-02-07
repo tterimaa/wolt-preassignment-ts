@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import RestaurantItem from './RestaurantItem'
 import nextId from 'react-id-generator'
 import { Restaurant, SortRules, AlphabeticallyRules } from './types'
+import styles from './Restaurants.module.css'
 
 const apiUrl = 'http://localhost:3001/restaurants'
 
@@ -34,9 +35,9 @@ const Restaurants: React.FC = () => {
     <div>
       <button onClick={(): void => sortAlphabetically(restaurants)}>Sort</button>
       <span>Sort order: {sortRules.alphabetically}</span>
-      <ul>
+      <ul className={styles.RestaurantsGrid}>
         {restaurants.map(restaurant => (
-          <li key={nextId()}>
+          <li key={nextId()} className={styles.gridElement}>
             <RestaurantItem
               name={restaurant.name}
               city={restaurant.city}

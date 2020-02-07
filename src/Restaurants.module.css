@@ -1,0 +1,16 @@
+.RestaurantsGrid {
+    padding: 0;
+    display: grid;
+    grid-gap: 0.5em;
+}
+
+.gridElement {
+    list-style: none;
+    display: flex;
+}
+
+@media only screen and (min-width: 600px) {
+    .RestaurantsGrid {
+      grid-template-columns: repeat(2, minmax(50px, 800px));
+    }
+  }
