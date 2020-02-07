@@ -1,23 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import RestaurantItem from './RestaurantItem'
 import nextId from 'react-id-generator'
-import { Restaurant } from './types'
+import { Restaurant, SortRules, AlphabeticallyRules } from './types'
 
 const apiUrl = 'http://localhost:3001/restaurants'
 
 const Restaurants: React.FC = () => {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([])
+  const [sortRules, setSortRules] = useState<SortRules>({ alphabetically: AlphabeticallyRules.Unordered })
+
+  const sortAlphabetically = (restaurantsArray: Restaurant[]): void => {
+    if (
+      sortRules.alphabetically === AlphabeticallyRules.Descending ||
+      sortRules.alphabetically === AlphabeticallyRules.Unordered
+    ) {
+      setSortRules({ alphabetically: AlphabeticallyRules.Ascending })
+      setRestaurants(restaurantsArray.sort((a, b) => (a.name >= b.name ? 1 : -1)))
+    } else {
+      setSortRules({ alphabetically: AlphabeticallyRules.Descending })
+      setRestaurants(restaurantsArray.sort((a, b) => (a.name >= b.name ? -1 : 1)))
+    }
+  }
 
   useEffect(() => {
-    async function startSetRestaurants(): Promise<void> {
+    async function setDefaults(): Promise<void> {
       const response = await fetch(apiUrl)
       const restaurants = await response.json()
       setRestaurants(restaurants)
     }
-    startSetRestaurants()
+    setDefaults()
   }, [])
   return (
     <div>
+      <button onClick={(): void => sortAlphabetically(restaurants)}>Sort</button>
+      <span>Sort order: {sortRules.alphabetically}</span>
       <ul>
         {restaurants.map(restaurant => (
           <li key={nextId()}>

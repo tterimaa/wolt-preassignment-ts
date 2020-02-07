@@ -5,3 +5,13 @@ export interface Restaurant {
   delivery_price: number
   description?: string
 }
+
+export enum AlphabeticallyRules {
+  Ascending = 'ascending',
+  Descending = 'descending',
+  Unordered = 'unordered',
+}
+
+export interface SortRules {
+  alphabetically: AlphabeticallyRules
+}
