@@ -1,13 +1,16 @@
 import React from 'react'
-import styles from './Layout.module.css'
+import styles from './css/Layout.module.css'
+import Headroom from 'react-headroom'
 
 const Layout: React.FC = ({ children }) => {
   return (
     <div>
-      <div className={styles.App}>
-        <h1>My Restaurants App</h1>
-        {children}
-      </div>
+      <Headroom>
+        <nav>
+          <h1>My Restaurants App</h1>
+        </nav>
+      </Headroom>
+      <div className={styles.App}>{children}</div>
       <footer className={styles.footer}>© Tarmo Terimaa, 2020</footer>
     </div>
   )

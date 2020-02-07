@@ -4,8 +4,13 @@
     grid-gap: 0.5em;
 }
 
+h1 {
+    margin: 0;
+}
+
 .restaurantsContainer {
     position: relative;
+    padding: 1em;
 }
 
 .gridElement {

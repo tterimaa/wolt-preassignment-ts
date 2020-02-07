@@ -2,11 +2,14 @@
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
 }
 
 .footer {
     background-color: gray;
     text-align: center;
     padding: 2em;
+}
+
+nav {
+  padding: 1em;
 }

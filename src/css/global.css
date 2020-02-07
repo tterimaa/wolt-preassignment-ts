@@ -1,0 +1,8 @@
+body {
+    margin: 0;
+}
+
+.headroom--pinned {
+    background-color: black;
+    color: white;
+}

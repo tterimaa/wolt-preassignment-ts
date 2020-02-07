@@ -1,6 +1,6 @@
 import React from 'react'
 import { Restaurant } from './types'
-import styles from './RestaurantItem.module.css'
+import styles from './css/RestaurantItem.module.css'
 
 const RestaurantItem: React.FC<Restaurant> = ({ name, image, city, delivery_price, description }) => {
   return (
