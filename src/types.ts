@@ -3,7 +3,9 @@ export interface Restaurant {
   image: string
   city: string
   delivery_price: number
-  description?: string
+  description: string
+  currency: string
+  tags: Array<string>
 }
 
 export enum AlphabeticallyRules {

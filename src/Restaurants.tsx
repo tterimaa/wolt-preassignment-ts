@@ -50,6 +50,8 @@ const Restaurants: React.FC = () => {
               image={restaurant.image}
               delivery_price={restaurant.delivery_price}
               description={restaurant.description}
+              currency={restaurant.currency}
+              tags={restaurant.tags}
             />
           </li>
         ))}

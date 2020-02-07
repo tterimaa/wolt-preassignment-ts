@@ -7,16 +7,43 @@
     object-fit: cover;
     width: 100%;
     max-height: 100%;
+    border-radius: 0.5rem;
 }
 
 .header {
     position: absolute;
+    display: flex;
+    justify-content: space-between;
     top: 0;
+    left: 0;
+    right: 0;
     color: white;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    background-color: rgba(0,0,0,1);
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.description {
+    position: absolute;
+    font-size: 2vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+span {
+    transform: translateY(20%);
+}
+
+h2 {
+    margin: 0;
 }
 
 .info {
     position: absolute;
     bottom: 0;
     color: white;
+    left: 1rem;
 }
