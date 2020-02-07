@@ -3,6 +3,7 @@ import RestaurantItem from './RestaurantItem'
 import nextId from 'react-id-generator'
 import { Restaurant, SortRules, AlphabeticallyRules } from './types'
 import styles from './Restaurants.module.css'
+import Headroom from 'react-headroom'
 
 const apiUrl = 'http://localhost:3001/restaurants'
 
@@ -32,9 +33,17 @@ const Restaurants: React.FC = () => {
     setDefaults()
   }, [])
   return (
-    <div>
-      <button onClick={(): void => sortAlphabetically(restaurants)}>Sort</button>
-      <span>Sort order: {sortRules.alphabetically}</span>
+    <div className={styles.restaurantsContainer}>
+      <Headroom>
+        <span>
+          Sort by name:{' '}
+          <button onClick={(): void => sortAlphabetically(restaurants)}>
+            {sortRules.alphabetically === AlphabeticallyRules.Ascending
+              ? AlphabeticallyRules.Descending
+              : AlphabeticallyRules.Ascending}
+          </button>
+        </span>
+      </Headroom>
       <ul className={styles.RestaurantsGrid}>
         {restaurants.map(restaurant => (
           <li key={nextId()} className={styles.gridElement}>

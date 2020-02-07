@@ -4,6 +4,10 @@
     grid-gap: 0.5em;
 }
 
+.restaurantsContainer {
+    position: relative;
+}
+
 .gridElement {
     list-style: none;
     display: flex;
