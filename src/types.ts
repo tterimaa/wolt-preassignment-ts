@@ -9,9 +9,9 @@ export interface Restaurant {
 }
 
 export enum AlphabeticallyRules {
-  Ascending = 'ascending',
-  Descending = 'descending',
-  Unordered = 'unordered',
+  Ascending = 'Ascending',
+  Descending = 'Descending',
+  Unordered = 'Unordered',
 }
 
 export interface SortRules {
