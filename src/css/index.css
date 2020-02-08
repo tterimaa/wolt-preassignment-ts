@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'UbuntuMono';
+    src: local('UbuntuMono'), url(../fonts/UbuntuMono-Regular.ttf) format('truetype');
+}
+
+body {
+    font-family: 'UbuntuMono';
+    margin: 0;
+    background-color: black;
+    color: rgb(0,255,0);
+}
+
+.headroom--pinned {
+    background-color: black;
+}

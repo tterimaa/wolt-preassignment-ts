@@ -1,7 +1,7 @@
 .RestaurantsGrid {
     padding: 0;
     display: grid;
-    grid-gap: 0.5em;
+    grid-gap: 0.8em;
 }
 
 h1 {
@@ -17,6 +17,26 @@ h1 {
     list-style: none;
     display: flex;
 }
+
+button {
+    background-color: black;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    color: rgb(0,255,0);
+    box-shadow: 1px 1px 5px 3px rgba(255, 255, 255, 0.3);
+    min-width: 5rem;
+    font-weight: bold;
+}
+
+button:active {
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+            box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+button:focus {
+    outline: none;
+  }
 
 @media only screen and (min-width: 600px) {
     .RestaurantsGrid {
