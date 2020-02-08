@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import RestaurantItem from './RestaurantItem'
 import nextId from 'react-id-generator'
-import { Restaurant, SortRules, AlphabeticallyRules } from './types'
-import styles from './css/Restaurants.module.css'
+import { Restaurant, SortRules, AlphabeticallyRules } from '../types'
+import styles from '../css/Restaurants.module.css'
+import { formatRestaurants } from '../helper'
 
 const apiUrl = 'http://localhost:3001/restaurants'
 
@@ -27,7 +28,7 @@ const Restaurants: React.FC = () => {
     async function setDefaults(): Promise<void> {
       const response = await fetch(apiUrl)
       const restaurants = await response.json()
-      setRestaurants(restaurants)
+      setRestaurants(formatRestaurants(restaurants))
     }
     setDefaults()
   }, [])
@@ -48,7 +49,7 @@ const Restaurants: React.FC = () => {
               name={restaurant.name}
               city={restaurant.city}
               image={restaurant.image}
-              delivery_price={restaurant.delivery_price}
+              deliveryPrice={restaurant.deliveryPrice}
               description={restaurant.description}
               currency={restaurant.currency}
               tags={restaurant.tags}

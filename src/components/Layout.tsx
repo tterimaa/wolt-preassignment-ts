@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './css/Layout.module.css'
+import styles from '../css/Layout.module.css'
 import Headroom from 'react-headroom'
 
 const Layout: React.FC = ({ children }) => {

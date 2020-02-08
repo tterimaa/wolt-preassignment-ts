@@ -1,4 +1,4 @@
-export interface Restaurant {
+export interface RestaurantRaw {
   name: string
   image: string
   city: string
@@ -6,6 +6,16 @@ export interface Restaurant {
   description: string
   currency: string
   tags: Array<string>
+}
+
+export interface Restaurant {
+  name: string
+  image: string
+  city: string
+  description: string
+  currency: string
+  tags: Array<string>
+  deliveryPrice: string
 }
 
 export enum AlphabeticallyRules {

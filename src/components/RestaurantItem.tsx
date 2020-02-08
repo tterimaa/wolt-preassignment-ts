@@ -1,13 +1,8 @@
 import React from 'react'
-import { Restaurant } from './types'
-import styles from './css/RestaurantItem.module.css'
+import { Restaurant } from '../types'
+import styles from '../css/RestaurantItem.module.css'
 
-const RestaurantItem: React.FC<Restaurant> = ({ name, image, city, delivery_price, description, currency, tags }) => {
-  const moveDecimal = (num: number): number => num / Math.pow(10, num.toString().length - 1)
-  const formattedPrice = new Intl.NumberFormat('en-GB', {
-    style: 'currency',
-    currency: currency,
-  }).format(moveDecimal(delivery_price))
+const RestaurantItem: React.FC<Restaurant> = ({ name, image, city, deliveryPrice, description, tags }) => {
   return (
     <div className={styles.container}>
       <img src={image} alt={name} className={styles.image} />
@@ -17,7 +12,7 @@ const RestaurantItem: React.FC<Restaurant> = ({ name, image, city, delivery_pric
       </div>
       <div className={styles.info}>
         <h3>{description}</h3>
-        <p>{`Cheap delivery: ${formattedPrice}`}</p>
+        <p>{`Cheap delivery: ${deliveryPrice}`}</p>
       </div>
       <div className={styles.tags}>
         {tags.map(tag => (
