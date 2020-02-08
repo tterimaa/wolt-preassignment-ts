@@ -33,3 +33,5 @@ Start the app in another terminal window
 ```bash
 cd npm start
 ```
+
+The app is now running in http://localhost:3000/
