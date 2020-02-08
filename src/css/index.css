@@ -13,3 +13,7 @@ body {
 .headroom--pinned {
     background-color: black;
 }
+
+.headroom--unfixed {
+    border-bottom: 1px solid rgb(0,255,0);
+}

@@ -31,6 +31,7 @@
     top: 50%;
     transform: translate(-50%,-50%);
     color: white;
+    display: none;
 }
 
 span {
@@ -46,4 +47,26 @@ h2 {
     bottom: 0;
     color: white;
     left: 1rem;
+    display: none;
+}
+
+.tags {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.tags div {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.tags div:hover {
+    color: white;
+    transform: scale(1.1);
 }

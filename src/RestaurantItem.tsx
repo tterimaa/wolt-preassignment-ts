@@ -18,10 +18,12 @@ const RestaurantItem: React.FC<Restaurant> = ({ name, image, city, delivery_pric
       <div className={styles.description}>
         <h3>{description}</h3>
       </div>
-      <div className={styles.info}>
+      <div className={styles.tags}>
         {tags.map(tag => (
-          <span key={tag}>{tag} </span>
+          <div key={tag}>{tag} </div>
         ))}
+      </div>
+      <div className={styles.info}>
         <p>{`Cheap delivery: ${formattedPrice}`}</p>
       </div>
     </div>
