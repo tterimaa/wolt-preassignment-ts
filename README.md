@@ -22,10 +22,16 @@ Clone the project
 git clone https://github.com/tterimaa/wolt-preassignment-ts.git
 ```
 
+Install dependencies
+
+```bash
+cd wolt-preassignment-ts && npm install
+```
+
 Start json-server
 
 ```bash
-cd wolt-preassignment-ts && npm run server
+npm run server
 ```
 
 Start the app in another terminal window
